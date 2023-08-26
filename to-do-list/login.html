@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>login</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/9ca3442254.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-box">
+        <h1 id="title">Sign Up</h1>
+        <form>
+          <div class="input-group">
+            <div class="input-field" id="nameField">
+              <i class="fa-solid fa-user fa-bounce"></i>
+              <input type="text" placeholder="Name" required />
+            </div>
+            <div class="input-field">
+              <i class="fa-solid fa-envelope fa-bounce"></i>
+              <input type="email" placeholder="Email" required />
+            </div>
+            <div class="input-field">
+              <i class="fa-solid fa-lock fa-bounce"></i>
+              <input type="password" placeholder="password" required />
+            </div>
+            <p class="forgot">Lost password <a href="#">Click Here!</a></p>
+          </div>
+          <div class="btn-field">
+            <button type="button" id="signupbtn">Sign up</button>
+            <button type="button" id="signinbtn" class="disable">
+              Sign in
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script>
+      let signupbtn = document.getElementById("signupbtn");
+      let signinbtn = document.getElementById("signinbtn");
+      let nameField = document.getElementById("nameField");
+      let title = document.getElementById("title");
+
+      signinbtn.onclick = function () {
+        nameField.style.maxHeight = "0";
+        title.innerHTML = "Sign in";
+        signinbtn.classList.add("disable");
+        signinbtn.classList.remove("disable");
+      };
+      signupbtn.onclick = function () {
+        nameField.style.maxHeight = "60px";
+        title.innerHTML = "Sign Up";
+        signupbtn.classList.remove("disable");
+        signinbtn.classList.add("disable");
+      };
+    </script>
+  </body>
+</html>
